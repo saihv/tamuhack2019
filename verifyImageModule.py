@@ -96,7 +96,8 @@ def findAuthFace(identified_faces, faces, imgFilename):
                     #print(pt1)
                     #print(pt2)
                     cv2.rectangle(image, pt1, pt2, (0,0,255), 5)
-                    cv2.putText(image, str(name['name']) + ', ' + str(conf*100) + '%', pt1, cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255,255,255), 2)
+                    cv2.putText(image, str(name['name']), (pt1[0], pt1[1] - 25), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,255,255), 2)
+                    cv2.putText(image, str(conf*100) + '%', pt1, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,255,255), 2)
                     authorized = True
 
     cv2.namedWindow('Detections')

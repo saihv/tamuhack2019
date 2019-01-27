@@ -10,8 +10,8 @@ RATE = 16000
 RECORD_SECONDS = 4
 
 apiKey = "a7372791257749e28ac394767ae5dca7"
-#profileID = "1d998ccb-3b5f-4386-a71f-2c90e81336fb"
-profileID = 'bda3ad98-59da-4e4c-94c8-402129ef8820'
+profileID = "1d998ccb-3b5f-4386-a71f-2c90e81336fb"   # George
+#profileID = 'bda3ad98-59da-4e4c-94c8-402129ef8820'  # Sai
 
 def recordStream(wavFilename):
     p = pyaudio.PyAudio()
@@ -62,8 +62,8 @@ def verifyAudio():
     verificationAgent = VerificationService.VerificationServiceHttpClientHelper(
         apiKey)
     
-    filename = 'TestRecord.wav'
-    recordStream(filename)
+    filename = 'test/george20.wav'
+    #recordStream(filename)
     authStatus, conf = verifySample(verificationAgent, apiKey, filename, profileID)
 
     return authStatus, conf
